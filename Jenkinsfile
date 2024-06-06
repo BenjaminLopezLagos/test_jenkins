@@ -6,6 +6,13 @@ pipeline {
                 checkout scm
             }
         }
+        stage('install python'){
+            steps {
+                sh '''
+                    sudo apt install python3
+                '''
+            }
+        }
         stage('Setup Python Environment') {
             steps {
                 sh '''
